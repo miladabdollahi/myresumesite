@@ -9,6 +9,7 @@ RUN yarn install
 COPY . .
 
 ARG NEXT_PUBLIC_APP_NAME
+ARG NEXT_PUBLIC_DOMAIN
 
 RUN yarn build
 
