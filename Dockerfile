@@ -1,4 +1,4 @@
-FROM node:19-alpine3.16 as builder
+FROM node:18 as builder
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ ARG NEXT_PUBLIC_APP_NAME
 RUN yarn build
 
 # Stage 2: Run (with Node.js, not nginx!)
-FROM node:19-alpine3.16
+FROM node:18
 
 WORKDIR /app
 
