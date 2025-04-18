@@ -2,17 +2,15 @@ FROM node:19-alpine3.16 as builder
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json yarn.lock.
 
-COPY package-lock.json .
-
-RUN npm ci
+RUN yarn install
 
 COPY . .
 
 ARG NEXT_PUBLIC_APP_NAME
 
-RUN npm run build
+RUN yarn build
 
 FROM nginx
 
