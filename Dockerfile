@@ -12,8 +12,14 @@ ARG NEXT_PUBLIC_APP_NAME
 
 RUN yarn build
 
-FROM nginx
+# Stage 2: Run (with Node.js, not nginx!)
+FROM node:19-alpine3.16
 
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+WORKDIR /app
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app /app
+COPY --from=builder /app/.next .next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
