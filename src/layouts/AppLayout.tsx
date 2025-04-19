@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import Menu from '@/components/partials/Menu';
 import Footer from '@/components/partials/Footer';
 import ScrollToTop from 'react-scroll-to-top';
@@ -37,6 +38,31 @@ const AppLayout: React.FC<Props> = ({ children, title }) => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://milad-abdollahi.ir" />
       </Head>
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-JP7X2RR4Y8`} />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JP7X2RR4Y8');
+          `,
+        }}
+      />
+      <Script
+        id="clarity"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "r6pyf49eok");`,
+        }}
+      />
+
       <div className="flex min-h-screen flex-col">
         <ScrollToTop
           smooth
