@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+Allow: /$
+
+Sitemap: https://milad-abdollahi.ir/sitemap.xml
