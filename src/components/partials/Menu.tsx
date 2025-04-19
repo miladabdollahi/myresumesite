@@ -21,34 +21,34 @@ const Menu = () => {
           </a>
         </Link>
         <ul className="ml-auto hidden items-center md:flex">
-          <li>
-            <Link href="/works">
-              <a
-                className={classNames(
-                  'inline-block px-4 font-semibold  transition-colors duration-300 hover:text-primary-600 hover:underline',
-                  {
-                    'text-primary-500': router.asPath == '/works',
-                  }
-                )}
-              >
-                Works
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog">
-              <a
-                className={classNames(
-                  'inline-block px-4 font-semibold  transition-colors duration-150 hover:text-primary-600 hover:underline',
-                  {
-                    'text-primary-500': router.asPath == '/blog',
-                  }
-                )}
-              >
-                Blog
-              </a>
-            </Link>
-          </li>
+          {/*<li>*/}
+          {/*  <Link href="/works">*/}
+          {/*    <a*/}
+          {/*      className={classNames(*/}
+          {/*        'inline-block px-4 font-semibold  transition-colors duration-300 hover:text-primary-600 hover:underline',*/}
+          {/*        {*/}
+          {/*          'text-primary-500': router.asPath == '/works',*/}
+          {/*        }*/}
+          {/*      )}*/}
+          {/*    >*/}
+          {/*      Works*/}
+          {/*    </a>*/}
+          {/*  </Link>*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*  <Link href="/blog">*/}
+          {/*    <a*/}
+          {/*      className={classNames(*/}
+          {/*        'inline-block px-4 font-semibold  transition-colors duration-150 hover:text-primary-600 hover:underline',*/}
+          {/*        {*/}
+          {/*          'text-primary-500': router.asPath == '/blog',*/}
+          {/*        }*/}
+          {/*      )}*/}
+          {/*    >*/}
+          {/*      Blog*/}
+          {/*    </a>*/}
+          {/*  </Link>*/}
+          {/*</li>*/}
           <li>
             <Link href="/contact">
               <a
