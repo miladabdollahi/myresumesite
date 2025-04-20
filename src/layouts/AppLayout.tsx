@@ -37,6 +37,17 @@ const AppLayout: React.FC<Props> = ({ children, title }) => {
 
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://milad-abdollahi.ir" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "r6pyf49eok");
+            `,
+          }}
+        />
       </Head>
       <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=G-JP7X2RR4Y8`} />
       <Script
@@ -49,17 +60,6 @@ const AppLayout: React.FC<Props> = ({ children, title }) => {
             gtag('js', new Date());
             gtag('config', 'G-JP7X2RR4Y8');
           `,
-        }}
-      />
-      <Script
-        id="clarity"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `(function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "r6pyf49eok");`,
         }}
       />
 
